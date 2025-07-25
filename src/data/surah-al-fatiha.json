@@ -1,0 +1,373 @@
+{
+  "surah": {
+    "id": 1,
+    "name": "Al-Fatiha",
+    "englishName": "The Opening",
+    "arabicName": "الفاتحة",
+    "revelationType": "Meccan",
+    "numberOfAyahs": 7,
+    "bismillah": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
+  },
+  "languages": [
+    {
+      "id": 1,
+      "name": "English",
+      "code": "en",
+      "flag": "🇺🇸"
+    },
+    {
+      "id": 2,
+      "name": "Español",
+      "code": "es",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": 3,
+      "name": "Italiano",
+      "code": "it",
+      "flag": "🇮🇹"
+    },
+    {
+      "id": 4,
+      "name": "Dutch",
+      "code": "nl",
+      "flag": "🇳🇱"
+    },
+    {
+      "id": 5,
+      "name": "Shqiptar",
+      "code": "sq",
+      "flag": "🇦🇱"
+    },
+    {
+      "id": 6,
+      "name": "Türkçe",
+      "code": "tr",
+      "flag": "🇹🇷"
+    },
+    {
+      "id": 7,
+      "name": "Indonesia",
+      "code": "id",
+      "flag": "🇮🇩"
+    },
+    {
+      "id": 8,
+      "name": "Bengali",
+      "code": "bn",
+      "flag": "🇧🇩"
+    },
+    {
+      "id": 9,
+      "name": "Thai",
+      "code": "th",
+      "flag": "🇹🇭"
+    },
+    {
+      "id": 10,
+      "name": "Swahili",
+      "code": "sw",
+      "flag": "🇰🇪"
+    },
+    {
+      "id": 11,
+      "name": "Chinese (Simplified)",
+      "code": "zh",
+      "flag": "🇨🇳"
+    },
+    {
+      "id": 12,
+      "name": "Français",
+      "code": "fr",
+      "flag": "🇫🇷"
+    },
+    {
+      "id": 13,
+      "name": "Deutsch",
+      "code": "de",
+      "flag": "🇩🇪"
+    },
+    {
+      "id": 14,
+      "name": "Português",
+      "code": "pt",
+      "flag": "🇵🇹"
+    },
+    {
+      "id": 15,
+      "name": "Bosanski",
+      "code": "bs",
+      "flag": "🇧🇦"
+    },
+    {
+      "id": 16,
+      "name": "Swedish",
+      "code": "sv",
+      "flag": "🇸🇪"
+    },
+    {
+      "id": 17,
+      "name": "Russian",
+      "code": "ru",
+      "flag": "🇷🇺"
+    },
+    {
+      "id": 18,
+      "name": "Melayu",
+      "code": "ms",
+      "flag": "🇲🇾"
+    },
+    {
+      "id": 19,
+      "name": "فارسی",
+      "code": "fa",
+      "flag": "🇮🇷"
+    },
+    {
+      "id": 20,
+      "name": "Malayalam",
+      "code": "ml",
+      "flag": "🇮🇳"
+    }
+  ],
+  "ayahs": [
+    {
+      "number": 1,
+      "arabic": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
+      "transliteration": "Bismillah hir rahman nir raheem",
+      "translations": {
+        "en": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
+        "es": "En el nombre de Allah, el Misericordioso, el Compasivo",
+        "it": "In nome di Allah, il Compassionevole, il Misericordioso",
+        "nl": "In de naam van Allah, de Erbarmer, de Meest Barmhartige.",
+        "sq": "Me emër të Allahut, Mëshirues dhe Përdëllimtar i Madh.",
+        "tr": "Rahman ve Rahim olan Allah'ın adıyla",
+        "id": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.",
+        "bn": "শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।",
+        "th": "ด้วยพระนามของอัลลอฮฺ ผู้ทรงกรุณาปราณี ผู้ทรงเมตตาเสมอ",
+        "sw": "KWA JINA LA MWENYEZI MUNGU MWINGI WA REHEMA MWENYE KUREHEMU.",
+        "zh": "奉至仁至慈的真主之名",
+        "fr": "Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.",
+        "de": "Im Namen Allahs, des Allerbarmers, des Barmherzigen.",
+        "pt": "Em nome de Deus, o Clemente, o Misericordioso.",
+        "bs": "U ime Allaha, Milostivog, Samilosnog!",
+        "sv": "I GUDS, DEN NÅDERIKES, DEN BARMHÄRTIGES NAMN",
+        "ru": "Во имя Аллаха, Милостивого, Милосердного!",
+        "ms": "Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.",
+        "fa": "به نام خداوند بخشنده ی مهربان",
+        "ml": "പരമകാരുണികനും കരുണാനിധിയുമായ അല്ലാഹുവിന്റെ നാമത്തില്‍ ."
+      }
+    },
+    {
+      "number": 2,
+      "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ",
+      "transliteration": "Alhamdu lillaahi Rabbil 'aalameen",
+      "translations": {
+        "en": "[All] praise is [due] to Allah, Lord of the worlds -",
+        "es": "Las alabanzas a Allah*, Señor de los mundos",
+        "it": "La lode [appartiene] ad Allah, Signore dei mondi",
+        "nl": "Alle lof zij Allah, de Heer der Werelden",
+        "sq": "Çdo lavdërim i përket Allahut (Perëndisë), Zotit të Gjithësisë",
+        "tr": "Hamd, Alemlerin Rabbi Allah'a mahsustur.",
+        "id": "Segala puji bagi Allah, Tuhan semesta alam.",
+        "bn": "যাবতীয় প্রশংসা আল্লাহ তাআলার যিনি সকল সৃষ্টি জগতের পালনকর্তা।",
+        "th": "การสรรเสริญทั้งหลายนั้น เป็นสิทธิของอัลลอฮฺผู้เป็นพระเจ้าแห่งสากลโลก",
+        "sw": "Sifa njema zote ni za Mwenyezi Mungu, Mola Mlezi wa viumbe vyote;",
+        "zh": "一切赞颂全归真主，众世界 的主，",
+        "fr": "Louange à Allah, Seigneur de l'univers.",
+        "de": "(Alles) Lob gehört Allah, dem Herrn der Welten,",
+        "pt": "Louvado seja Deus, Senhor do Universo,",
+        "bs": "Tebe, Allaha, Gospodara svjetova, hvalimo,",
+        "sv": "Lov och pris tillkommer Gud, världarnas Herre,",
+        "ru": "Хвала Аллаху, Господу миров,",
+        "ms": "Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.",
+        "fa": "ستایش مخصوص خداوندی است که پروردگار جهانیان است.",
+        "ml": "സ്തുതി സര്‍വ്വലോക പരിപാലകനായ അല്ലാഹുവിന്നാകുന്നു।"
+      }
+    },
+    {
+      "number": 3,
+      "arabic": "ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+      "transliteration": "Ar-Rahmaanir-Raheem",
+      "translations": {
+        "en": "The Entirely Merciful, the Especially Merciful,",
+        "es": "El Misericordioso, el Compasivo",
+        "it": "il Compassionevole, il Misericordioso,",
+        "nl": "De Erbarmer, de Meest Barmhartige.",
+        "sq": "Mëshirues dhe Përdëllimtar i Madh.",
+        "tr": "O Rahman ve Rahim'dir,",
+        "id": "Maha Pemurah lagi Maha Penyayang.",
+        "bn": "যিনি নিতান্ত মেহেরবান ও দয়ালু।",
+        "th": "ผู้ทรงกรุณาปราณี ผู้ทรงเมตตาเสมอ",
+        "sw": "Mwingi wa Rehema Mwenye Kurehemu;",
+        "zh": "至仁至慈的主，",
+        "fr": "Le Tout Miséricordieux, le Très Miséricordieux,",
+        "de": "dem Allerbarmer, dem Barmherzigen,",
+        "pt": "Clemente, o Misericordioso,",
+        "bs": "Milostivog, Samilosnog,",
+        "sv": "den Nåderike, den Barmhärtige,",
+        "ru": "Милостивому, Милосердному,",
+        "ms": "Yang Maha Pemurah, lagi Maha Mengasihani.",
+        "fa": "بخشنده ی مهربان است",
+        "ml": "പരമകാരുണികനും കരുണാനിധിയും।"
+      }
+    },
+    {
+      "number": 4,
+      "arabic": "مَـٰلِكِ يَوْمِ ٱلدِّينِ",
+      "transliteration": "Maaliki Yawmid-Deen",
+      "translations": {
+        "en": "Sovereign of the Day of Recompense.",
+        "es": "Rey del Día de la Retribución",
+        "it": "Re del Giorno del Giudizio.",
+        "nl": "De Heerser op de Dag des Oordeels.",
+        "sq": "Sunduesit të ditës së gjykimit.",
+        "tr": "Din Gününün sahibidir.",
+        "id": "Yang menguasai di Hari Pembalasan.",
+        "bn": "যিনি বিচার দিনের মালিক।",
+        "th": "ผู้ทรงอภิสิทธิ์แห่งวันตอบแทน",
+        "sw": "Mwenye Kumiliki Siku ya Malipo.",
+        "zh": "报应日的主，",
+        "fr": "Maître du Jour de la rétribution.",
+        "de": "dem Herrscher am Tag des Gerichts.",
+        "pt": "Soberano do Dia do Juízo.",
+        "bs": "Vladara Dana sudnjeg,",
+        "sv": "som allsmäktig råder över Domens dag!",
+        "ru": "Властелину Дня воздаяния!",
+        "ms": "Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).",
+        "fa": "مالک روز جزاء است.",
+        "ml": "പ്രതിഫല ദിവസത്തിന്റെ ഉടമസ്ഥന്‍।"
+      }
+    },
+    {
+      "number": 5,
+      "arabic": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+      "transliteration": "Iyyaaka na'budu wa lyyaaka nasta'een",
+      "translations": {
+        "en": "It is You we worship and You we ask for help.",
+        "es": "Sólo a Ti te adoramos, sólo en Ti buscamos ayuda",
+        "it": "Te noi adoriamo e a Te chiediamo aiuto.",
+        "nl": "U alleen aanbidden wij en U alleen vragen wij om hulp.",
+        "sq": "Vetëm Ty të adhurojmë dhe vetëm prej Teje ndihmë kërkojmë!",
+        "tr": "Ancak Sana kulluk eder ve yalnız Senden yardım dileriz.",
+        "id": "Hanya Engkaulah yang kami sembah, dan hanya kepada Engkaulah kami meminta pertolongan.",
+        "bn": "আমরা একমাত্র তোমারই ইবাদত করি এবং শুধুমাত্র তোমারই সাহায্য প্রার্থনা করি।",
+        "th": "เฉพาะพระองค์เท่านั้นที่พวกข้าพระองค์เคารพอิบาดะฮฺ และเฉพาะพระองค์เท่านั้นที่พวกข้าพระองค์ขอความช่วยเหลือ",
+        "sw": "Wewe tu tunakuabudu, na Wewe tu tunakuomba msaada.",
+        "zh": "我们只崇拜你，只求你祐助",
+        "fr": "C'est Toi [Seul] que nous adorons, et c'est Toi [Seul] dont nous implorons secours.",
+        "de": "Dir allein dienen wir, und zu Dir allein flehen wir um Hilfe.",
+        "pt": "Só a Ti adoramos e só de Ti imploramos ajuda!",
+        "bs": "Tebi se klanjamo i od Tebe pomoć tražimo!",
+        "sv": "Dig tillber vi; Dig anropar vi om hjälp.",
+        "ru": "Тебе одному мы поклоняемся и Тебя одного молим о помощи.",
+        "ms": "Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.",
+        "fa": "تنها تو را می پرستیم؛ و تنها از تو یاری می جوییم.",
+        "ml": "നിന്നെ മാത്രം ഞങ്ങള്‍ ആരാധിക്കുന്നു. നിന്നോട് മാത്രം ഞങ്ങള്‍ സഹായം തേടുന്നു।"
+      }
+    },
+    {
+      "number": 6,
+      "arabic": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
+      "transliteration": "Ihdinas-Siraatal-Mustaqeem",
+      "translations": {
+        "en": "Guide us to the straight path -",
+        "es": "Guíanos por el camino recto",
+        "it": "Guidaci sulla retta via,",
+        "nl": "Leid ons op het rechte Pad.",
+        "sq": "Udhëzona në rrugë të drejtë.",
+        "tr": "Bizi doğru yola eriştir.",
+        "id": "Tunjukilah kami jalan yang lurus,",
+        "bn": "আমাদেরকে সরল পথ দেখাও,",
+        "th": "ขอพระองค์ทรงแนะนำพวกข้าพระองค์ซึ่งทางอันเที่ยงตรง",
+        "sw": "Tuongoe njia iliyo nyooka,",
+        "zh": "求你引领我们正路，",
+        "fr": "Guide-nous dans le droit chemin,",
+        "de": "Leite uns den geraden Weg,",
+        "pt": "Guia-nos à senda reta,",
+        "bs": "Uputi nas na Pravi put,",
+        "sv": "Led oss på den raka vägen -",
+        "ru": "Веди нас прямым путем,",
+        "ms": "Tunjukilah kami jalan yang lurus.",
+        "fa": "ما را به راه راست هدایت کن.",
+        "ml": "ഞങ്ങളെ നീ നേര്‍മാര്‍ഗത്തില്‍ ചേര്‍ക്കേണമേ।"
+      }
+    },
+    {
+      "number": 7,
+      "arabic": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
+      "transliteration": "Siraatal-lazeena an'amta 'alaihim ghayril-maghdoobi 'alaihim wa lad-daaalleen",
+      "translations": {
+        "en": "The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray.",
+        "es": "el camino de los que has favorecido, no el de los que son motivo de ira, ni el de los extraviados.",
+        "it": "la via di coloro che hai colmato di grazia, non di coloro che [sono incorsi] nella [Tua] ira, né degli sviati.",
+        "nl": "Het Pad van degenen aan wie U gunsten hebt geschonken, niet van degenen op wie de toorn rust en niet dat van de dwalenden.",
+        "sq": "Në rrugën e atyre që u ke dhuruar mirësi. E jo në (rrugën) e atyre që kanë shkaktuar pezmin (Tënd), as në rrugën e atyre që janë të humbur!",
+        "tr": "Nimete erdirdiğin kimselerin yoluna; gazaba uğrayanların, ya da sapıtanların yoluna değil.",
+        "id": "(yaitu) Jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat.",
+        "bn": "সে সমস্ত লোকের পথ, যাদেরকে তুমি নেয়ামত দান করেছ। তাদের পথ নয়, যাদের প্রতি তোমার গজব নাযিল হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।",
+        "th": "(คือ) ทางของบรรดาผู้ที่พระองค์ได้ทรงโปรดปราณแก่พวกเขา มิใช่ในทางของพวกที่ถูกกริ้ว และมิใช่ทางของพวกที่หลงผิด",
+        "sw": "Njia ya ulio waneemesha, siyo ya walio kasirikiwa, wala walio potea.",
+        "zh": "你所祐助者的路，不是受谴怒者的路，也不是迷误者的路。",
+        "fr": "le chemin de ceux que Tu as comblés de faveurs, non pas de ceux qui ont encouru Ta colère, ni des égarés.",
+        "de": "den Weg derjenigen, denen Du Gunst erwiesen hast, nicht derjenigen, die (Deinen) Zorn erregt haben, und nicht der Irregehenden!",
+        "pt": "À senda dos que agraciaste, não à dos abominados, nem à dos extraviados.",
+        "bs": "na Put onih kojima si milost Svoju darovao, a ne onih koji su protiv sebe srdžbu izazvali, niti onih koji su zalutali!",
+        "sv": "den väg de vandrat som Du har välsignat med Dina gåvor; inte de som har drabbats av [Din] vrede och inte de som har gått vilse!",
+        "ru": "путем тех, кого Ты облагодетельствовал, не тех, на кого пал гнев, и не заблудших.",
+        "ms": "Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.",
+        "fa": "راه کسانی که بر آنان نعمت دادی؛ نه خشم گرفتگان بر آنها؛ و نه گمراهان.",
+        "ml": "നീ അനുഗ്രഹിച്ചവരുടെ മാര്‍ഗത്തില്‍ . കോപത്തിന്ന് ഇരയായവരുടെ മാര്‍ഗത്തിലല്ല. പിഴച്ചുപോയവരുടെ മാര്‍ഗത്തിലുമല്ല."
+      }
+    }
+  ],
+  "audio": {
+    "reciter": "Mishary Rashid Alafasy",
+    "url": "https://cdn.islamic.network/quran/audio/128/mis_031/",
+    "baseUrl": "https://cdn.islamic.network/quran/audio/128/mis_031/{ayah_number}.mp3",
+    "timestamps": [
+      {
+        "ayah": 1,
+        "start": 0.5,
+        "end": 4.0,
+        "duration": 3.5
+      },
+      {
+        "ayah": 2,
+        "start": 4.0,
+        "end": 7.5,
+        "duration": 3.5
+      },
+      {
+        "ayah": 3,
+        "start": 7.5,
+        "end": 9.5,
+        "duration": 2.0
+      },
+      {
+        "ayah": 4,
+        "start": 9.5,
+        "end": 12.0,
+        "duration": 2.5
+      },
+      {
+        "ayah": 5,
+        "start": 12.0,
+        "end": 15.5,
+        "duration": 3.5
+      },
+      {
+        "ayah": 6,
+        "start": 15.5,
+        "end": 18.0,
+        "duration": 2.5
+      },
+      {
+        "ayah": 7,
+        "start": 18.0,
+        "end": 25.0,
+        "duration": 7.0
+      }
+    ]
+  }
+}
