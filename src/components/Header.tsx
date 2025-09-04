@@ -1,13 +1,49 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { MapPin, Clock } from "lucide-react";
-import logo from "@/public/logo.png";
-// import Image from "next/image";
+import { Fragment, useState, useEffect } from "react";
+import {
+  MapPin,
+  Clock,
+  Menu,
+  X,
+  Settings,
+  Share2,
+  Bookmark,
+  Info,
+  HelpCircle,
+} from "lucide-react";
+import { Menu as HeadlessMenu, MenuItem, Transition } from "@headlessui/react";
+import Image from "next/image";
+import logo from "../../public/logo.png";
 
 interface PrayerTime {
   name: string;
   time: string;
+}
+
+function MenuButton({
+  icon: Icon,
+  text,
+}: {
+  icon: React.ElementType;
+  text: string;
+}) {
+  return (
+    <HeadlessMenu>
+      <MenuItem>
+        {({ active }) => (
+          <button
+            className={`${
+              active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+            } group flex w-full items-center rounded-md px-4 py-2 text-sm`}
+          >
+            <Icon className="mr-3 h-5 w-5" aria-hidden="true" />
+            {text}
+          </button>
+        )}
+      </MenuItem>
+    </HeadlessMenu>
+  );
 }
 
 export default function Header() {
@@ -72,15 +108,51 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-white shadow-sm border-b">
-      <div className="container mx-auto px-4 py-4 text-center">
-        <div className="flex-col justify-center items-center">
-          {/* Logo Section */}
-          <div className="flex items-center space-x-2 justify-center">
-            {/* <Image src={logo} alt="Quran Logo" width={100} height={100} /> */}
+    <header className="bg-white shadow-sm">
+      <div className="container mx-auto px-4 py-4">
+        {/* Top bar with menu button and logo */}
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center space-x-2">
+            <Image
+              src={logo}
+              alt="Quran Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <span className="text-xl font-bold text-gray-800">Quran</span>
           </div>
 
+          <HeadlessMenu as="div" className="relative">
+            <div>
+              <HeadlessMenu.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none">
+                <span className="sr-only">Open main menu</span>
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              </HeadlessMenu.Button>
+            </div>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <HeadlessMenu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <div className="px-1 py-1">
+                  <MenuButton icon={Settings} text="Settings" />
+                  <MenuButton icon={Share2} text="Share" />
+                  <MenuButton icon={Bookmark} text="Bookmark" />
+                  <MenuButton icon={Info} text="About Us" />
+                  <MenuButton icon={HelpCircle} text="Help" />
+                </div>
+              </HeadlessMenu.Items>
+            </Transition>
+          </HeadlessMenu>
+        </div>
+
+        <div className="flex-col justify-center items-center">
           {/* Prayer Times and Location */}
           <div className="flex-col items-center space-x-6 justify-center">
             <div className="flex items-center space-x-2 mt-4 justify-center">

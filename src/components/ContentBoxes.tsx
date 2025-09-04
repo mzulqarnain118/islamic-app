@@ -312,6 +312,7 @@ export default function ContentBoxes({
 
         {/* Translation and Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Transliteration */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between mb-4">
               <span className="text-sm font-medium text-gray-700">
@@ -329,6 +330,7 @@ export default function ContentBoxes({
             </div>
           </div>
 
+          {/* Word Details */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between mb-4">
               <span className="text-sm font-medium text-gray-700">
@@ -400,11 +402,6 @@ export default function ContentBoxes({
         {/* Hidden audio element for ayah audio */}
         <audio ref={ayahAudioRef} onEnded={handleAyahAudioEnd} preload="none" />
 
-        {/* Ayah Navigation */}
-        <div className="bg-white rounded-lg shadow-md p-4">
-          <div className="flex items-center justify-between"></div>
-        </div>
-
         {/* Arabic Verse */}
         <div className="bg-white rounded-lg shadow-md p-2 relative">
           <div className="text-center">
@@ -415,7 +412,6 @@ export default function ContentBoxes({
                 className="flex items-center space-x-2 px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span className="text-sm">Previous Ayah</span>
               </button>
               <div
                 className="text-3xl font-bold text-gray-800 leading-relaxed"
@@ -433,7 +429,6 @@ export default function ContentBoxes({
                 disabled={currentAyah === surahFatihaData.ayahs.length}
                 className="flex items-center space-x-2 px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span className="text-sm">Next Ayah</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -457,23 +452,20 @@ export default function ContentBoxes({
           </div>
         </div>
 
-        {/* Transliteration */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex items-center justify-center mb-4">
-            <span className="text-sm font-medium text-gray-700">
-              Transliteration
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Transliteration */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="text-lg italic text-gray-700 leading-relaxed text-center">
+              {getLocalTransliteration(currentAyah)}
+            </div>
           </div>
-          <div className="text-lg italic text-gray-700 leading-relaxed text-center">
-            {getLocalTransliteration(currentAyah)}
-          </div>
-        </div>
 
-        {/* Translation */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex items-center justify-center mb-4"></div>
-          <div className="text-lg text-gray-700 leading-relaxed text-center">
-            {getLocalTranslation(currentAyah, selectedLanguage)}
+          {/* Translation */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-center mb-4"></div>
+            <div className="text-lg text-gray-700 leading-relaxed text-center">
+              {getLocalTranslation(currentAyah, selectedLanguage)}
+            </div>
           </div>
         </div>
 

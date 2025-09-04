@@ -1,6 +1,6 @@
 "use client";
 
-import { Settings, Baby, ChevronRight } from "lucide-react";
+import { Info, Baby, ChevronRight } from "lucide-react";
 import surahFatihaData from "@/data/surah-al-fatiha.json";
 
 interface TabsSectionProps {
@@ -69,9 +69,9 @@ export default function TabsSection({
 
             <button
               className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
-              title="Settings"
+              title="Info"
             >
-              <Settings className="w-5 h-5" />
+              <Info className="w-5 h-5" />
             </button>
             <div className="relative">
               <button

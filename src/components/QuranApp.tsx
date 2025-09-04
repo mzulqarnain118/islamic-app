@@ -278,7 +278,7 @@ export default function QuranApp() {
       />
 
       {/* Row 6: Image Slider */}
-      <ImageSlider title="Islamic Calligraphy & Tajweed" />
+      <ImageSlider />
 
       {/* Row 7: Educational Content */}
       <div className="container mx-auto px-4 py-8">

@@ -3,36 +3,54 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface ImageSliderProps {
-  title: string;
-}
-
-export default function ImageSlider({ title }: ImageSliderProps) {
+export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Placeholder images - replace with actual Islamic artwork/tajweed visuals
+  // Test images for Al-Fatihah
   const images = [
     {
-      src: "/api/placeholder/400/250",
-      alt: "Islamic Calligraphy 1",
-      title: "Beautiful Calligraphy",
+      src: "/al-fatihah-1.jpg",
+      alt: "Surah Al-Fatihah 1",
+      title: "Al-Fatihah 1",
     },
     {
-      src: "/api/placeholder/400/250",
-      alt: "Islamic Calligraphy 2",
-      title: "Quranic Verses",
+      src: "/al-fatihah-2.jpg",
+      alt: "Surah Al-Fatihah 2",
+      title: "Al-Fatihah 2",
     },
     {
-      src: "/api/placeholder/400/250",
-      alt: "Islamic Calligraphy 3",
-      title: "Tajweed Rules",
+      src: "/al-fatihah-3.jpg",
+      alt: "Surah Al-Fatihah 3",
+      title: "Al-Fatihah 3",
     },
     {
-      src: "/api/placeholder/400/250",
-      alt: "Islamic Calligraphy 4",
-      title: "Arabic Typography",
+      src: "/al-fatihah-4.jpg",
+      alt: "Surah Al-Fatihah 4",
+      title: "Al-Fatihah 4",
+    },
+    {
+      src: "/al-fatihah-5.jpg",
+      alt: "Surah Al-Fatihah 5",
+      title: "Al-Fatihah 5",
+    },
+    {
+      src: "/al-fatihah-6.jpg",
+      alt: "Surah Al-Fatihah 6",
+      title: "Al-Fatihah 6",
     },
   ];
+
+  // Create placeholder divs for the images (you'll replace these with actual images)
+  const createPlaceholderDiv = (index: number) => (
+    <div className="w-full h-64 bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
+      <div className="text-center p-4">
+        <div className="text-2xl font-bold text-gray-400 mb-2">
+          Al-Fatihah {index + 1}
+        </div>
+        <p className="text-gray-400">Placeholder for Al-Fatihah image</p>
+      </div>
+    </div>
+  );
 
   // Auto-slide functionality
   useEffect(() => {
@@ -57,11 +75,7 @@ export default function ImageSlider({ title }: ImageSliderProps) {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-        {title}
-      </h2>
-
-      <div className="relative max-w-md mx-auto">
+      <div className="relative max-w-2xl mx-auto">
         {/* Main image container */}
         <div className="relative overflow-hidden rounded-lg shadow-md">
           <div
@@ -70,13 +84,19 @@ export default function ImageSlider({ title }: ImageSliderProps) {
           >
             {images.map((image, index) => (
               <div key={index} className="w-full flex-shrink-0">
-                <img
+                {createPlaceholderDiv(index)}
+                {/* Uncomment and use this when you have actual images:
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-48 object-cover"
+                  width={800}
+                  height={450}
+                  className="w-full h-64 object-contain"
+                  priority={index === 0}
                 />
+                */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                  <h3 className="text-white text-sm font-medium">
+                  <h3 className="text-white text-sm font-medium text-center">
                     {image.title}
                   </h3>
                 </div>

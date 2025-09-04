@@ -243,203 +243,187 @@ export default function AudioPlayer({
     (ayah) => ayah.number === currentAyah
   );
 
+  // List of available reciters
+  const reciters = [
+    { id: "mishary_alafasy", name: "Mishary Alafasy" },
+    { id: "abdul_basit", name: "Abdul Basit" },
+    { id: "saad_al_ghamdi", name: "Saad Al-Ghamdi" },
+    { id: "maher_al_muaiqly", name: "Maher Al-Muaiqly" },
+    { id: "muhammad_ayyoub", name: "Muhammad Ayyoub" },
+  ];
+
+  const [selectedReciter, setSelectedReciter] = useState(reciters[0].id);
+
   return (
-    <div className="bg-white border-t shadow-lg">
-      <div className="container mx-auto px-4 py-4">
-        {/* Audio element */}
-        <audio ref={audioRef} preload="metadata" />
+    <div className="container mx-auto px-4 py-4 bg-white rounded-lg shadow-md ">
+      {/* Audio element */}
+      <audio ref={audioRef} preload="metadata" />
 
-        {/* Main Player Section */}
-        <div className="flex items-center justify-between mb-4">
-          {/* Left section - Current Ayah info */}
-          <div className="flex items-center space-x-4 min-w-0 flex-1">
-            <div className="text-sm text-gray-600 min-w-0">
-              <div className="font-medium truncate">
-                Ayah {currentAyah} of {surahFatihaData.ayahs.length}
-              </div>
-              <div className="text-xs text-gray-500 truncate">
-                {surahFatihaData.surah.name} -{" "}
-                {surahFatihaData.surah.englishName}
-              </div>
-            </div>
-
-            {/* Current Ayah Arabic Preview */}
-            <div className="hidden md:block text-right flex-1 min-w-0">
-              <div
-                className="text-lg font-bold text-gray-800 truncate"
-                dir="rtl"
-              >
-                {currentAyahData?.arabic}
-              </div>
-            </div>
+      {/* Progress bar */}
+      <div className="space-y-2 mb-4">
+        <div className="flex items-center space-x-2">
+          <span className="text-xs text-gray-500 min-w-0">
+            {formatTime(currentTime)}
+          </span>
+          <div className="flex-1 relative">
+            <input
+              type="range"
+              min="0"
+              max={duration || 0}
+              step="0.1"
+              value={currentTime}
+              onChange={handleSeek}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              style={{
+                background: `linear-gradient(to right, #16a34a 0%, #16a34a ${
+                  (currentTime / (duration || 1)) * 100
+                }%, #e5e7eb ${
+                  (currentTime / (duration || 1)) * 100
+                }%, #e5e7eb 100%)`,
+              }}
+            />
           </div>
+          <span className="text-xs text-gray-500 min-w-0">
+            {formatTime(duration)}
+          </span>
+        </div>
 
-          {/* Center section - Main Controls */}
-          <div className="flex items-center space-x-2 mx-4">
+        {/* Ayah Progress Indicators */}
+        <div className="flex space-x-1">
+          {surahFatihaData.ayahs.map((ayah) => (
             <button
-              onClick={handlePrevious}
-              disabled={currentAyah === 1}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              title="Previous Ayah"
-            >
-              <SkipBack className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={handleRestart}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-              title="Restart Current Ayah"
-            >
-              <RotateCcw className="w-4 h-4" />
-            </button>
-
-            <button
-              onClick={handlePlayPause}
-              disabled={isLoading}
-              className="p-4 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors disabled:opacity-50 shadow-lg"
-              title={isPlaying ? "Pause" : "Play"}
-            >
-              {isLoading ? (
-                <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              ) : isPlaying ? (
-                <Pause className="w-6 h-6" />
-              ) : (
-                <Play className="w-6 h-6" />
-              )}
-            </button>
-
-            <button
-              onClick={handleNext}
-              disabled={currentAyah === surahFatihaData.ayahs.length}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              title="Next Ayah"
-            >
-              <SkipForward className="w-5 h-5" />
-            </button>
-
-            {/* Repeat Toggle */}
-            <button
-              onClick={() => setIsRepeatMode(!isRepeatMode)}
-              className={`p-2 rounded-full transition-colors ${
-                isRepeatMode
-                  ? "bg-green-100 text-green-700"
-                  : "hover:bg-gray-100 text-gray-600"
+              key={ayah.number}
+              onClick={() => setCurrentAyah(ayah.number)}
+              className={`flex-1 h-2 rounded-full transition-colors ${
+                ayah.number === currentAyah
+                  ? "bg-green-600"
+                  : ayah.number < currentAyah
+                  ? "bg-green-300"
+                  : "bg-gray-200"
               }`}
-              title={isRepeatMode ? "Disable Repeat" : "Enable Repeat"}
-            >
-              <RotateCcw className="w-4 h-4" />
-            </button>
-          </div>
+              title={`Ayah ${ayah.number}`}
+            />
+          ))}
+        </div>
+      </div>
 
-          {/* Right section - Additional Controls */}
-          <div className="flex items-center space-x-3">
-            {/* Playback Speed */}
-            <div className="hidden sm:flex items-center space-x-2">
-              <span className="text-xs text-gray-600">Speed:</span>
-              <select
-                value={playbackRate}
-                onChange={(e) => setPlaybackRate(parseFloat(e.target.value))}
-                className="text-xs border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-500"
-              >
-                <option value={0.5}>0.5x</option>
-                <option value={0.75}>0.75x</option>
-                <option value={1}>1x</option>
-                <option value={1.25}>1.25x</option>
-                <option value={1.5}>1.5x</option>
-              </select>
-            </div>
+      {/* Main Controls */}
+      <div className="flex flex-col items-center space-y-4">
+        <div className="flex items-center space-x-4">
+          {/* Previous Button */}
+          <button
+            onClick={handlePrevious}
+            disabled={currentAyah === 1}
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title="Previous Ayah"
+          >
+            <SkipBack className="w-5 h-5" />
+          </button>
 
-            {/* Volume Control */}
-            <div className="flex items-center space-x-2">
-              <Volume2 className="w-4 h-4 text-gray-600" />
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={volume}
-                onChange={handleVolumeChange}
-                className="w-16 sm:w-20 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                title={`Volume: ${Math.round(volume * 100)}%`}
-              />
-            </div>
+          {/* Play/Pause Button */}
+          <button
+            onClick={handlePlayPause}
+            disabled={isLoading}
+            className="p-4 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors disabled:opacity-50 shadow-lg"
+            title={isPlaying ? "Pause" : "Play"}
+          >
+            {isLoading ? (
+              <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            ) : isPlaying ? (
+              <Pause className="w-6 h-6" />
+            ) : (
+              <Play className="w-6 h-6" />
+            )}
+          </button>
 
-            {/* Download Button */}
-            <button
-              onClick={handleDownload}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-              title="Download Current Ayah"
-            >
-              <Download className="w-4 h-4 text-gray-600" />
-            </button>
-          </div>
+          {/* Next Button */}
+          <button
+            onClick={handleNext}
+            disabled={currentAyah === surahFatihaData.ayahs.length}
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title="Next Ayah"
+          >
+            <SkipForward className="w-5 h-5" />
+          </button>
         </div>
 
-        {/* Progress bar */}
-        <div className="space-y-2">
+        {/* Secondary Controls */}
+        <div className="flex items-center space-x-6">
+          {/* Restart Button */}
+          <button
+            onClick={handleRestart}
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            title="Restart Current Ayah"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+
+          {/* Repeat Toggle */}
+          <button
+            onClick={() => setIsRepeatMode(!isRepeatMode)}
+            className={`p-2 rounded-full transition-colors ${
+              isRepeatMode
+                ? "bg-green-100 text-green-700"
+                : "hover:bg-gray-100 text-gray-600"
+            }`}
+            title={isRepeatMode ? "Disable Repeat" : "Enable Repeat"}
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+
+          {/* Volume Control */}
           <div className="flex items-center space-x-2">
-            <span className="text-xs text-gray-500 min-w-0">
-              {formatTime(currentTime)}
-            </span>
-            <div className="flex-1 relative">
-              <input
-                type="range"
-                min="0"
-                max={duration || 0}
-                step="0.1"
-                value={currentTime}
-                onChange={handleSeek}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                style={{
-                  background: `linear-gradient(to right, #16a34a 0%, #16a34a ${
-                    (currentTime / (duration || 1)) * 100
-                  }%, #e5e7eb ${
-                    (currentTime / (duration || 1)) * 100
-                  }%, #e5e7eb 100%)`,
-                }}
-              />
-            </div>
-            <span className="text-xs text-gray-500 min-w-0">
-              {formatTime(duration)}
-            </span>
+            <Volume2 className="w-4 h-4 text-gray-600" />
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              value={volume}
+              onChange={handleVolumeChange}
+              className="w-16 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              title={`Volume: ${Math.round(volume * 100)}%`}
+            />
           </div>
 
-          {/* Ayah Progress Indicators */}
-          <div className="flex space-x-1">
-            {surahFatihaData.ayahs.map((ayah) => (
-              <button
-                key={ayah.number}
-                onClick={() => setCurrentAyah(ayah.number)}
-                className={`flex-1 h-2 rounded-full transition-colors ${
-                  ayah.number === currentAyah
-                    ? "bg-green-600"
-                    : ayah.number < currentAyah
-                    ? "bg-green-300"
-                    : "bg-gray-200"
-                }`}
-                title={`Ayah ${ayah.number}`}
-              />
-            ))}
+          {/* Playback Speed */}
+          <div className="flex items-center space-x-2">
+            <select
+              value={playbackRate}
+              onChange={(e) => setPlaybackRate(parseFloat(e.target.value))}
+              className="text-xs border rounded px-2 py-1  text-gray-600"
+            >
+              <option value={0.5}>0.5x</option>
+              <option value={0.75}>0.75x</option>
+              <option value={1}>1x</option>
+              <option value={1.25}>1.25x</option>
+              <option value={1.5}>1.5x</option>
+            </select>
           </div>
-        </div>
 
-        {/* Current Ayah Info Bar */}
-        <div className="mt-3 pt-3 border-t border-gray-100">
-          <div className="flex items-center justify-between text-xs text-gray-600">
-            <div className="flex items-center space-x-4">
-              <span>Reciter: {surahFatihaData.audio.reciter}</span>
-              <span
-                className={`px-2 py-1 rounded-full ${
-                  isRepeatMode ? "bg-green-100 text-green-700" : "bg-gray-100"
-                }`}
-              >
-                {isRepeatMode ? "Repeat: ON" : "Repeat: OFF"}
-              </span>
-            </div>
-            <div className="text-right">
-              <div className="font-medium">Playing: Ayah {currentAyah}</div>
-            </div>
+          {/* Reciter Selection */}
+          <div className="flex items-center space-x-2 text-gray-600">
+            <select
+              value={selectedReciter}
+              onChange={(e) => setSelectedReciter(e.target.value)}
+              className="text-xs border rounded px-2 py-1  text-gray-600"
+            >
+              {reciters.map((reciter) => (
+                <option key={reciter.id} value={reciter.id}>
+                  {reciter.name}
+                </option>
+              ))}
+            </select>
           </div>
+
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            title="Download Current Ayah"
+          >
+            <Download className="w-4 h-4 text-gray-600" />
+          </button>
         </div>
       </div>
     </div>
